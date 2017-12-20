@@ -1,7 +1,7 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import getCurrentUser from '../actions/auth_actions'
-import bindActionCreators from 'redux'
+// import { connect } from 'react-redux'
+// import getCurrentUser from '../actions/auth_actions'
+// import bindActionCreators from 'redux'
 
 
 const UserDashboard = () => {
