@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Route, withRouter, Redirect } from 'react-rout
 const EntryPoint = (props) => {
   return(
     <Router>
-    <div>
-      <button
-        onClick={() => props.history.push('/login')}
-      >Login</button>
-      <button
-        onClick={() => props.history.push('/signup')}
-      >Signup</button>
-    </div>
+      <div>
+        <button
+          onClick={() => props.history.push('/login')}
+        >Login</button>
+        <button
+          onClick={() => props.history.push('/signup')}
+        >Signup</button>
+      </div>
     </Router>
   )
 }

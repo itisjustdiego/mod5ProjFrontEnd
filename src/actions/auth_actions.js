@@ -9,13 +9,27 @@ export function signupUser(userData) {
     })
     .then(resp => resp.json())
     .then(data => {
-      localStorage.setItem('token', data.token)
-      return dispatch({type: 'SIGNUP_USER', payload:{user:data, isLoggedIn:true}})
-    })
+      if (!data.error) {
+         // console.log('hey')
+         localStorage.setItem('token', data.token);
+         return dispatch({ type: 'SIGN_UP', payload: {user: data, isLoggedIn: true, error: false} })
+       } else {
+         return {error: 'Invalid Signup!', status: 401}
+       }
+     })
   }
 }
 
+export function renderPlayers() {
+  return (dispatch) => {
+      fetch(`http://localhost:3001/api/v1/users`)
+      .then(res => res.json())
+      .then(data => dispatch({ type: 'FETCH_ALL_PLAYERS', payload:data}))
+    }
+  }
+
 export function loginUser(userData) {
+  console.log('loginuser')
   return (dispatch) => {
     return fetch(`${backendAPI}/login`, {
       method: 'POST',
@@ -24,9 +38,15 @@ export function loginUser(userData) {
      })
       .then(resp => resp.json())
       .then(data => {
-        localStorage.setItem('token', data.token);
-        return dispatch({ type: 'LOGIN_USER', payload: {user: data, isLoggedIn: true} })
-      })
+        if (!data.error) {
+         console.log('hey')
+         localStorage.setItem('token', data.token);
+         return dispatch({ type: 'LOGIN_USER', payload: {user: data, isLoggedIn: true, error: false} })
+       } else {
+         console.log('error')
+         return {error: 'Invalid login!', status: 401}
+       }
+     })
   }
 }
 

@@ -14,6 +14,9 @@ export default (state = { isLoggedIn: false, user: {username: null}, error: fals
     case ('CURRENT_USER'):
       return Object.assign({}, state, {user: action.payload.user, isLoggedIn: true});
 
+    case ('FETCH_ALL_PLAYERS'):
+      return {...state, players: action.payload}
+      
     default:
       return state;
   }
