@@ -20,6 +20,14 @@ export function signupUser(userData) {
   }
 }
 
+export function getPlayerMessages() {
+  return (dispatch) => {
+    fetch(`http://localhost:3001/api/v1/messages`)
+    .then(res => res.json())
+    .then(data => dispatch({type: 'FETCH_USER_MESSAGES', payload:data}))
+  }
+}
+
 export function renderPlayers() {
   return (dispatch) => {
       fetch(`http://localhost:3001/api/v1/users`)

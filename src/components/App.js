@@ -5,6 +5,7 @@ import Login from '../containers/Login'
 import UserDashboard from '../containers/UserDashboard'
 import PlayersList from '../containers/PlayersList'
 import EntryPoint from '../containers/Entry'
+import Chat from '../containers/Chat'
 
 class App extends Component {
 
@@ -26,6 +27,9 @@ class App extends Component {
           />
           <Route exact path='/players'
             component={PlayersList}
+          />
+          <Route exact path='/chat'
+            component={Chat}
           />
         </div>
       </Router>

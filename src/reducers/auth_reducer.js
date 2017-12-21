@@ -16,7 +16,10 @@ export default (state = { isLoggedIn: false, user: {username: null}, error: fals
 
     case ('FETCH_ALL_PLAYERS'):
       return {...state, players: action.payload}
-      
+
+    case ('FETCH_USER_MESSAGES'):
+      return {...state, user_messages:action.payload}
+
     default:
       return state;
   }
