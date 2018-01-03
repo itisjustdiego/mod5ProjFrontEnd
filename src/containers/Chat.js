@@ -13,9 +13,12 @@ class Chat extends React.Component {
   }
 
   componentDidMount(){
-    this.props.Messages(this.props.receiver_id, this.props.sender_id)
+    setInterval( () => {
+      this.props.Messages(this.props.receiver_id, this.props.sender_id)
+    }, 1500)
   }
-  
+
+
 
   componentWillReceiveProps(nextProps){
    if(this.props.sender_id != nextProps.sender_id || this.props.receiver_id != nextProps.receiver_id)
@@ -25,6 +28,7 @@ class Chat extends React.Component {
  handleChange = (event) => {
    console.log(event.target.value);
    this.setState({ message: event.target.value })
+   // this.setState({})
  }
 
  handleCreateMessage = (event) => {
@@ -63,7 +67,6 @@ class Chat extends React.Component {
           <Form onSubmit={this.handleCreateMessage}>
             <Form.Input
               name="password"
-              value={this.state.message}
               onChange={this.handleChange}
             />
             <Button type="submit">Send</Button>

@@ -78,7 +78,6 @@ class PlayersList extends React.Component{
             </div>
           </Grid.Column>
           <Grid.Column>
-            Loading ...
           </Grid.Column>
         </Grid>
         </div>
