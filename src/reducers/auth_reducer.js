@@ -22,6 +22,10 @@ export default (state = { isLoggedIn: false, user: {username: null}, error: fals
     // case ('FETCH_RECEIVED_MESSAGES'):
     //   return {...state, user_received_messages:action.payload}
 
+    case ('NEW_MESSAGE'):
+    console.log(action.payload);
+    return {...state, new_message:action.payload}
+
     case ('GETCOORD'):
       console.log(action.payload);
      let coordinates = action.payload.map((u, index) => ({

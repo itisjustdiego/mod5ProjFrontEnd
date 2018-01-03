@@ -20,6 +20,19 @@ export function signupUser(userData) {
   }
 }
 
+export  function createMessage(messageData) {
+  console.log(messageData);
+  return (dispatch) => {
+    fetch(`http://localhost:3001/api/v1/messages?receiver_id=${messageData.receiver_id}\&sender_id=${messageData.sender_id}`, {
+      method:'POST',
+      headers:headers,
+      body:JSON.stringify(messageData)
+    })
+    .then(resp => resp.json())
+    .then(data => dispatch({type: 'NEW_MESSAGE', payload:data}))
+  }
+}
+
 export function Messages(receiver_id, sender_id) {
   return (dispatch) => {
     fetch(`http://localhost:3001/api/v1/messages?receiver_id=${receiver_id}\&sender_id=${sender_id}`, {

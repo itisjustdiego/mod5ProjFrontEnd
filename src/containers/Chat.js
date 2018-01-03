@@ -8,13 +8,14 @@ class Chat extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      message: ""
+      content: ""
     }
   }
 
   componentDidMount(){
     this.props.Messages(this.props.receiver_id, this.props.sender_id)
   }
+  
 
   componentWillReceiveProps(nextProps){
    if(this.props.sender_id != nextProps.sender_id || this.props.receiver_id != nextProps.receiver_id)
@@ -24,6 +25,11 @@ class Chat extends React.Component {
  handleChange = (event) => {
    console.log(event.target.value);
    this.setState({ message: event.target.value })
+ }
+
+ handleCreateMessage = (event) => {
+   event.preventDefault()
+   this.props.createMessage({content:this.state.message, sender_id:this.props.sender_id, receiver_id:this.props.receiver_id})
  }
 
   render(){
@@ -54,7 +60,7 @@ class Chat extends React.Component {
             }
 
           })}
-          <Form onSubmit={this.handleMessage}>
+          <Form onSubmit={this.handleCreateMessage}>
             <Form.Input
               name="password"
               value={this.state.message}
@@ -77,6 +83,7 @@ class Chat extends React.Component {
 const mapStateToProps = (state) =>{
   return {
     user_messages: state.auth.user_messages,
+    new_message:state.auth.new_message
     // user_received_messages: state.auth.user_received_messages
   }
 }
