@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "geocoder": "^0.2.3",
+    "google-map-react": "^0.26.0",
+    "kotatsu": "^0.15.2",
+    "points-cluster": "^0.1.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-google-maps": "^9.4.3",
+    "react-motion": "^0.4.4",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
@@ -12,7 +18,9 @@
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
-    "semantic-ui-react": "^0.77.1"
+    "sass-loader": "^6.0.6",
+    "semantic-ui-react": "^0.77.1",
+    "style-loader": "^0.19.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -28,7 +28,7 @@ class App extends Component {
           <Route exact path='/players'
             component={PlayersList}
           />
-          <Route exact path='/chat'
+          <Route path='/chat'
             component={Chat}
           />
         </div>
@@ -38,3 +38,17 @@ class App extends Component {
 }
 
 export default App;
+
+
+//Monday Chat is finished
+//Tuesday agree to play + start map
+//Wednesday maps
+//Thursday maps
+//friday fix minor bugs + tiny features
+//
+//
+//
+//
+//
+//
+//

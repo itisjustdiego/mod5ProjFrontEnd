@@ -17,8 +17,20 @@ export default (state = { isLoggedIn: false, user: {username: null}, error: fals
     case ('FETCH_ALL_PLAYERS'):
       return {...state, players: action.payload}
 
-    case ('FETCH_USER_MESSAGES'):
+    case ('FETCH_MESSAGES'):
       return {...state, user_messages:action.payload}
+    // case ('FETCH_RECEIVED_MESSAGES'):
+    //   return {...state, user_received_messages:action.payload}
+
+    case ('GETCOORD'):
+      console.log(action.payload);
+     let coordinates = action.payload.map((u, index) => ({
+         id: index,
+         lat: u.lat ,
+         lng: u.lng
+       }))
+       // console.log(coordinates);
+      return {...state, playersCoordinates: coordinates}
 
     default:
       return state;
