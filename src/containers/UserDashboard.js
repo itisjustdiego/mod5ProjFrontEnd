@@ -5,6 +5,7 @@ import { Segment, Grid, Column } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import GMap from './GMap'
+import GoogleMap from './GoogleMap'
 
 
 // import bindActionCreators from 'redux'
@@ -21,7 +22,7 @@ class UserDashboard extends React.Component{
 
   render(){
     if(this.props.user && !!this.props.playersCoordinates ){
-      // console.log(this.props.playersCoordinates);
+      console.log(this.props);
       return (
         <div>
           <Grid columns={2} >
@@ -39,7 +40,7 @@ class UserDashboard extends React.Component{
             </Grid.Column>
             <Grid.Column>
               <div>
-                <GMap markers={this.props.playersCoordinates} />
+                <GoogleMap playersCoordinates={this.props.playersCoordinates}/>
               </div>
             </Grid.Column>
           </Grid>

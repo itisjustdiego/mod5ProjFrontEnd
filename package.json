@@ -5,6 +5,7 @@
   "dependencies": {
     "geocoder": "^0.2.3",
     "google-map-react": "^0.26.0",
+    "google-maps-react": "^1.1.2",
     "kotatsu": "^0.15.2",
     "points-cluster": "^0.1.4",
     "react": "^16.2.0",

@@ -28,13 +28,13 @@ export default (state = { isLoggedIn: false, user: {username: null}, error: fals
 
     case ('GETCOORD'):
       console.log(action.payload);
-     let coordinates = action.payload.map((u, index) => ({
-         id: index,
-         lat: u.lat ,
-         lng: u.lng
-       }))
+     // let coordinates = action.payload.map((u, index) => ({
+     //     id: index,
+     //     lat: u.lat ,
+     //     lng: u.lng
+     //   }))
        // console.log(coordinates);
-      return {...state, playersCoordinates: coordinates}
+      return {...state, playersCoordinates: action.payload}
 
     default:
       return state;
